@@ -9,6 +9,9 @@
 A premium personal landing page built on the concept of _Quiet Luxury Digital_ —
 minimal, elegant and fast. Handcrafted with pure HTML, CSS and JavaScript.
 
+**🔗 Live at [feacostaa.vercel.app](https://feacostaa.vercel.app/)**
+
+[![Live](https://img.shields.io/badge/Live-feacostaa.vercel.app-3F72FF?style=flat&logo=vercel&logoColor=white)](https://feacostaa.vercel.app/)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
