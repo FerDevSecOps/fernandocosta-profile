@@ -127,8 +127,11 @@
 
         <!-- Hero / identity column -->
         <section class="profile" id="hero" aria-label="Profile">
-            <img class="profile__avatar" data-animate src="assets/profile/fernando-costa.jpg"
-                alt="Portrait of Fernando Costa" width="400" height="400" fetchpriority="high" decoding="async">
+            <picture>
+                <source type="image/webp" srcset="assets/profile/fernando-costa.webp">
+                <img class="profile__avatar" data-animate src="assets/profile/fernando-costa.jpg"
+                    alt="Portrait of Fernando Costa" width="512" height="512" fetchpriority="high" decoding="async">
+            </picture>
 
             <h1 class="profile__title" data-animate style="--stagger: 50ms">Fernando Costa</h1>
             <p class="profile__subtitle" data-animate style="--stagger: 100ms">@feacostaa</p>
