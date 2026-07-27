@@ -34,11 +34,11 @@ front-end fundamentals.
 
 ## ✦ Preview
 
-> Add a screenshot at `docs/preview.png` once the profile photo is in place.
-
 <div align="center">
-  <img src="docs/preview.png" alt="Preview of the Fernando Costa profile page" width="820">
+  <img src="docs/preview.png" alt="Preview of the Fernando Costa profile page" width="840">
 </div>
+
+> Layout preview, shown with a placeholder avatar. The live site uses the real photo.
 
 ## ✦ Tech Stack
 
