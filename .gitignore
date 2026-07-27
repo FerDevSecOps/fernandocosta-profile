@@ -1,0 +1,22 @@
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editors ----
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---- Node (only if tooling is added later) ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ---- Deploy ----
+.vercel
+
+# ---- Logs / temp ----
+*.log
+.cache/
