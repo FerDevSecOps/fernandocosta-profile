@@ -1,0 +1,67 @@
+/* ==========================================================================
+   responsive.css — All breakpoint overrides (centralized)
+   Base styles are mobile-first; these queries scale the layout up.
+   Breakpoints: 900px (desktop 2-col), 1600px (ultrawide), small & short.
+   ========================================================================== */
+
+/* ---- Desktop: two-column layout ---- */
+@media (min-width: 900px) {
+    .layout {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: center;
+        justify-items: stretch;
+        gap: clamp(3rem, 6vw, 5rem);
+        text-align: left;
+        padding-block: clamp(2rem, 5vw, 4rem);
+    }
+
+    /* Identity aligns to the start of its column */
+    .profile {
+        align-items: flex-start;
+        max-width: none;
+    }
+
+    .profile__bio {
+        max-width: 32ch;
+    }
+
+    /* Buttons sit on the right, comfortably sized */
+    .social-links {
+        max-width: 24rem;
+        margin-left: auto;
+    }
+}
+
+/* ---- Ultrawide: keep content from stretching too far ---- */
+@media (min-width: 1600px) {
+    :root {
+        --container-max: 1160px;
+    }
+
+    .layout {
+        gap: 6rem;
+    }
+}
+
+/* ---- Short viewports (landscape phones): tighten vertical rhythm ---- */
+@media (max-height: 560px) and (min-width: 900px) {
+    .layout {
+        padding-block: 1.5rem;
+    }
+
+    .profile__avatar {
+        margin-bottom: 0;
+    }
+}
+
+/* ---- Very small phones: reduce padding and button spacing ---- */
+@media (max-width: 360px) {
+    .social-button {
+        padding: var(--space-3) var(--space-4);
+        gap: var(--space-3);
+    }
+
+    .brand__name {
+        display: none;
+    }
+}

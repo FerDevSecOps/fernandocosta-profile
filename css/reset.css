@@ -1,0 +1,73 @@
+/* ==========================================================================
+   reset.css — Minimal modern reset
+   Normalizes browser defaults without imposing any visual style.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margins */
+* {
+    margin: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    line-height: 1.5;
+}
+
+/* Media defaults: block-level and never overflow their container */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Inherit typography into form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Lists used for navigation carry no bullets */
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+/* Links inherit color; styling is defined per component */
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Avoid long unbroken strings breaking the layout */
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: break-word;
+}

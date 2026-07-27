@@ -1,0 +1,229 @@
+/* ==========================================================================
+   components.css — Isolated UI components (BEM)
+   Each block follows the order: base -> states -> hover.
+   Responsive overrides are centralized in responsive.css.
+   ========================================================================== */
+
+/* ==========================================================================
+   Icon — shared inline SVG rendering (referenced via <use>)
+   ========================================================================== */
+.icon {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ==========================================================================
+   Brand — corner monogram in the header
+   ========================================================================== */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text);
+}
+
+.brand__mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 6px 16px -8px var(--color-accent-glow);
+}
+
+.brand__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-brand);
+    letter-spacing: var(--ls-tight);
+    transition: color var(--transition-base);
+}
+
+.brand:hover .brand__name {
+    color: var(--color-accent-hover);
+}
+
+/* ==========================================================================
+   Profile — avatar, name, handle and bio
+   ========================================================================== */
+.profile__avatar {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-elevated);
+    box-shadow: var(--shadow-avatar);
+    margin-bottom: var(--space-2);
+}
+
+.profile__title {
+    font-size: var(--fs-display);
+    color: var(--color-text);
+}
+
+.profile__subtitle {
+    font-size: var(--fs-handle);
+    font-weight: 500;
+    color: var(--color-silver);
+    letter-spacing: var(--ls-normal);
+}
+
+.profile__bio {
+    max-width: 34ch;
+    font-size: var(--fs-bio);
+    line-height: var(--lh-snug);
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Social icons — compact quick-access row
+   ========================================================================== */
+.social-icons {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.social-icons__link {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    color: var(--color-text);
+    transition:
+        color var(--transition-base),
+        background-color var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.social-icons__link .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* hover / focus */
+.social-icons__link:hover,
+.social-icons__link:focus-visible {
+    color: var(--color-accent);
+    background: var(--color-glass);
+    border-color: var(--color-border);
+    transform: translateY(-2px);
+}
+
+.social-icons__link:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Social button — primary glass call-to-action
+   ========================================================================== */
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-glass);
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    backdrop-filter: blur(var(--blur-glass));
+    color: var(--color-text);
+    transition:
+        transform var(--transition-base),
+        background-color var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.social-button__icon {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    color: var(--color-text);
+    transition: color var(--transition-base);
+}
+
+.social-button__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-right: auto;
+    text-align: left;
+}
+
+.social-button__label {
+    font-size: var(--fs-button);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.social-button__meta {
+    font-size: var(--fs-button-meta);
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.social-button__arrow {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    color: var(--color-text-muted);
+    transition:
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+/* hover / focus */
+.social-button:hover,
+.social-button:focus-visible {
+    background: var(--color-glass-hover);
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-glass-hover);
+    transform: translateY(-2px) scale(1.015);
+}
+
+.social-button:hover .social-button__icon,
+.social-button:focus-visible .social-button__icon {
+    color: var(--color-accent);
+}
+
+.social-button:hover .social-button__arrow,
+.social-button:focus-visible .social-button__arrow {
+    color: var(--color-accent);
+    transform: translate(2px, -2px);
+}
+
+.social-button:active {
+    transform: translateY(0) scale(0.99);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer__text {
+    font-size: var(--fs-small);
+    color: var(--color-text-muted);
+}
+
+.footer__note {
+    font-size: var(--fs-small);
+    color: var(--color-silver);
+    opacity: 0.7;
+}

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   layout.css — Structure & containers (mobile-first)
+   Grid, flex and spacing for the page shell. All breakpoint overrides
+   are centralized in responsive.css.
+   ========================================================================== */
+
+/* ---- Page header ---- */
+.site-header {
+    display: flex;
+    align-items: center;
+    min-height: var(--header-height);
+    padding-inline: clamp(1.25rem, 5vw, 3.5rem);
+}
+
+/* ---- Main: single column on mobile, two columns on desktop ---- */
+.layout {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    justify-items: center;
+    gap: clamp(2.5rem, 7vw, 3.5rem);
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1.25rem, 5vw, 2.5rem) clamp(2.5rem, 6vw, 4rem);
+    text-align: center;
+}
+
+/* ---- Identity column ---- */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    max-width: 30rem;
+}
+
+/* ---- Social buttons column ---- */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 26rem;
+}
+
+/* ---- Footer ---- */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 5vw, 2.5rem);
+    text-align: center;
+}

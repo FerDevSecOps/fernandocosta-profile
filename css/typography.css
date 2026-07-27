@@ -1,0 +1,65 @@
+/* ==========================================================================
+   typography.css — Fonts, type scale and base text styles
+   Self-hosted @font-face + sizes, weights, line-heights and letter-spacing.
+   ========================================================================== */
+
+/* ---- Self-hosted font faces (assets/fonts) ---- */
+@font-face {
+    font-family: "Clash Display";
+    src: url("../assets/fonts/clash-display-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/inter-variable-latin.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---- Type scale (fluid) ---- */
+:root {
+    --fs-display: clamp(2.4rem, 1.7rem + 3vw, 3.6rem);
+    --fs-handle: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+    --fs-bio: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+    --fs-button: 1.0625rem;
+    --fs-button-meta: 0.8125rem;
+    --fs-icon-label: 0.95rem;
+    --fs-small: 0.8125rem;
+    --fs-brand: 0.95rem;
+
+    /* Line-heights */
+    --lh-tight: 1.08;
+    --lh-snug: 1.35;
+    --lh-normal: 1.6;
+
+    /* Letter-spacing */
+    --ls-tight: -0.02em;
+    --ls-normal: 0;
+    --ls-wide: 0.06em;
+}
+
+/* ---- Base text ---- */
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: var(--lh-normal);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Display headings */
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+}

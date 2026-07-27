@@ -1,0 +1,93 @@
+/* ==========================================================================
+   animations.css — Motion only
+   Keyframes, entrance reveals and the ambient background drift.
+   Everything here honors prefers-reduced-motion. Max duration: 300ms.
+   ========================================================================== */
+
+/* ---- Keyframes ---- */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Very slow, near-imperceptible drift for the background orbs */
+@keyframes orb-drift-a {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(6vmax, 4vmax, 0) scale(1.08);
+    }
+}
+
+@keyframes orb-drift-b {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(-5vmax, -4vmax, 0) scale(1.1);
+    }
+}
+
+/* ---- Entrance reveal ----
+   Runs from CSS as soon as html.js is set (an inline <head> script), so content
+   is never stuck hidden if the JS modules fail to load (e.g. opened via file://).
+   The `both` fill keeps each element at the 0% keyframe during its delay. */
+.js [data-animate] {
+    animation: fade-up 300ms ease-out both;
+    animation-delay: var(--stagger, 0ms);
+}
+
+/* ---- Ambient background drift ---- */
+.background::before {
+    animation: orb-drift-a 38s ease-in-out infinite alternate;
+}
+
+.background::after {
+    animation: orb-drift-b 46s ease-in-out infinite alternate;
+}
+
+/* Pause the drift while the tab is hidden (set from JS) */
+.background.is-paused::before,
+.background.is-paused::after {
+    animation-play-state: paused;
+}
+
+/* ==========================================================================
+   Reduced motion — disable all non-essential movement
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    .js [data-animate] {
+        opacity: 1;
+        animation: none;
+    }
+
+    .background::before,
+    .background::after {
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
